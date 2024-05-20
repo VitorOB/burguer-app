@@ -28,7 +28,7 @@ const Orders = () => {
 
   async function deleteOrder(orderId) {
     const newOrders = orders.filter((order) => order.id !== orderId);
-    
+
     await axios.delete(`http://localhost:3001/order/${orderId}`);
 
     setOrders(newOrders);
@@ -47,10 +47,10 @@ const Orders = () => {
         <u>
           {orders.map((order) => (
             <Order key={order.id}>
-              <p>{order.inputPedido}</p> <p>{order.inputClientName}</p>
+              <p>Pedido: {order.order}</p>
+              <p>Cliente: {order.clientName}</p>
               <button onClick={() => deleteOrder(order.id)}>
-                {" "}
-                <img src={Trash} alt="lata de lixo" />{" "}
+                <img src={Trash} alt="lata de lixo" />
               </button>
             </Order>
           ))}

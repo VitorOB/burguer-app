@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-// import Background from "./assets/logo1.svg"
-
 export const Container = styled.div`
-  /* background: #000;
-  background-size: cover; */
-  /* border: 1px solid blue; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,16 +25,6 @@ export const H1 = styled.h1`
   font-weight: 700;
   margin-bottom: 20px;
 `;
-
-// export const H3 = styled.h3`
-//   text-align: center;
-//   font-size: 18px;
-//   font-weight: 700;
-//   margin-bottom: 20px;
-//   display: flex;
-//   font-family: "Nunito", sans-serif;
-//   flex-wrap: nowrap;
-// `;
 
 export const InputLabel = styled.p`
   font-size: 18px;

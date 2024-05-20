@@ -1,7 +1,10 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Logo from "../../assets/logo1.svg";
+// import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Logo from "../../assets/burguer-logo.png";
 
 import axios from "axios";
 
@@ -15,6 +18,7 @@ import {
   Image,
   InputLabel,
   Input,
+  ContainerInputs,
 } from "./styles";
 
 const App = () => {
@@ -24,6 +28,10 @@ const App = () => {
 
   const inputPedido = useRef();
   const inputClientName = useRef();
+
+  // function notify(){
+  //   toast.success("Pedido enviado")
+  // }
 
   async function addNewOrder() {
     // Verifica se os campos estão vazios
@@ -56,20 +64,23 @@ const App = () => {
 
   return (
     <Container>
-      <Image src={Logo} />
-      <ContainerItens>
-        <H1>Faça seu pedido!</H1>
-        {/* <H3>Onde cada mordida é uma explosão de sabor: Satisfação em cada hambúrguer!</H3> */}
+      <ContainerInputs>
+        <Image src={Logo} />
+        <ContainerItens>
+          <H1>Faça seu pedido!</H1>
+          {/* <H3>Onde cada mordida é uma explosão de sabor: Satisfação em cada hambúrguer!</H3> */}
 
-        <InputLabel>Pedido</InputLabel>
-        <Input ref={inputPedido} placeholder="1 Coca-Cola, 1-X Salada" />
+          <InputLabel>Pedido</InputLabel>
+          <Input ref={inputPedido} placeholder="1 Coca-Cola, 1-X Salada" />
 
-        <InputLabel>Nome do Cliente</InputLabel>
-        <Input ref={inputClientName} placeholder="Steve Jobs" />
+          <InputLabel>Nome do Cliente</InputLabel>
+          <Input ref={inputClientName} placeholder="Steve Jobs" />
 
-        <Button onClick={addNewOrder}>Novo Pedido</Button>
-        {/* <{feedbackMessage && <p>{feedbackMessage}</p>}/> */}
-      </ContainerItens>
+          <Button onClick={addNewOrder}>Novo Pedido</Button>
+          {/* <ToastContainer /> */}
+          {/* <{feedbackMessage && <p>{feedbackMessage}</p>}/> */}
+        </ContainerItens>
+      </ContainerInputs>
     </Container>
   );
 };

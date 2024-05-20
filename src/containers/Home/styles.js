@@ -1,19 +1,21 @@
 import styled from "styled-components";
 
-// import Background from "./assets/logo1.svg"
+ import Background from "../../assets/burguer-fundo.jpg"
 
 export const Container = styled.div`
-  /* background: #000;
-  background-size: cover; */
+  background: url("${Background}");
+  background-size: cover;
   /* border: 1px solid blue; */
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
 export const Image = styled.img`
-  margin-top: 30px;
+  margin: 10px 50px;
+  width: 300px;
 `;
 
 // export const H3 = styled.h3`
@@ -41,7 +43,16 @@ export const Input = styled.input`
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.25);
   outline: none;
+  border: 2px solid #FFA62F;
   margin-bottom: 34px;
   font-family: "Nunito", sans-serif;
 `;
 
+export const ContainerInputs = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: auto 100px;
+    background-color: #FCB740;
+    border-radius: 20px;
+    border: 2px solid #d93856;
+`
